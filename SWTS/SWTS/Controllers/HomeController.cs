@@ -14,7 +14,7 @@ namespace SWTS.Controllers
         [AllowAnonymous]
         public ActionResult Login()
         {
-            return View("Index");
+            return View("../Account/Login");
         }
 
         [HttpGet]
