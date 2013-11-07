@@ -52,36 +52,3 @@ textarea {
 .validation-summary-valid {
     display: none;
 }
-
-.loginBox .button-group{
-    list-style-type: none;
-}
-.loginBox .button-group .reg {
-    float: left;
-    margin-left: 15px;
-    margin-right: 5px;
-}
-.loginBox .button-group .forgot {
-}
-
-.loginBox {
-    background-color:#f5f5f5;
-    border:1px solid #e3e3e3;
-    border-radius:4px;
-    -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.05);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-}
-.loginBox .btn {
-    background: #f2f2f2;
-    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dddddd));
-    background: -moz-linear-gradient(top, #ffffff, #dddddd);
-    background: linear-gradient(top, #ffffff, #dddddd);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dddddd');
-    border-color: #bbbbbb;
-    border-color: rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
-    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
-    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
-    color: #555555;
-    text-shadow: 0 1px 0 #fff;
-}
