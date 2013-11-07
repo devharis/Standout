@@ -5,6 +5,8 @@ namespace SWTS.Models
 {
     public class Supplier
     {
+        [Key]
+        public int SupplierId { get; set; }
         [Required]
         public String Name { get; set; }
         [Required]

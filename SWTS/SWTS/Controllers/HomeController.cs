@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using SWTS.Filters;
 using SWTS.Models;
-using WebMatrix.WebData;
+using SWTS.Models.Interface;
 
 namespace SWTS.Controllers
 {
@@ -10,6 +10,18 @@ namespace SWTS.Controllers
     [InitializeSimpleMembership]
     public class HomeController : Controller
     {
+        private ISupplierService _service;
+
+        public HomeController()
+            : this(new SupplierService())
+        {
+
+        }
+
+        public HomeController(ISupplierService service)
+        {
+            this._service = service;
+        }
 
         [AllowAnonymous]
         public ActionResult Login()
