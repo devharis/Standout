@@ -1,5 +1,18 @@
-﻿@{
+﻿@model List<SWTS.Models.Supplier>
+@{
     ViewBag.Title = "Suppliers";
 }
 
 <h2>Suppliers</h2>
+@foreach (var supplier in Model)
+{
+    <p>@supplier.Name</p>
+    <p>@supplier.Address</p>
+    <p>@supplier.PostCode</p>
+    <p>@supplier.City</p>
+    <p>@supplier.Country</p>
+    <p>@supplier.Email</p>
+    <p>@supplier.Phone</p>
+    <p>@supplier.Lat</p>
+    <p>@supplier.Lng</p>
+}

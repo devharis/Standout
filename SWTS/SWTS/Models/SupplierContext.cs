@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Web;
 
 namespace SWTS.Models
 {
     public class SupplierContext : DbContext
     {
         public SupplierContext()
-            : base("name=DefaultConnectionString")
+            : base("name=DefaultConnection")
         {
             this.Configuration.ProxyCreationEnabled = false;
         }

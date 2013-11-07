@@ -168,7 +168,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Interface\ISupplierRepository.cs" />
+    <Compile Include="Models\Interface\ISupplierService.cs" />
     <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\SupplierContext.cs" />
+    <Compile Include="Models\SupplierRepository.cs" />
+    <Compile Include="Models\SupplierService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -274,9 +279,7 @@
     <Content Include="Views\Home\Supplier.cshtml" />
     <Content Include="Views\Home\Suppliers.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

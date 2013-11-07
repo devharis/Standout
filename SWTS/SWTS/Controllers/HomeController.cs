@@ -32,8 +32,9 @@ namespace SWTS.Controllers
         [HttpGet]
         public ActionResult Suppliers()
         {
+            var model = this._service.GetAllSuppliers();
             // Query all suppliers
-            return View("Suppliers");
+            return View("Suppliers", model);
         }
 
         [HttpGet]
