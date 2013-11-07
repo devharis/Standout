@@ -11,7 +11,7 @@ namespace SWTS.Models
         public String Address { get; set; }
         [Required]
         [Display(Name = "Post code")]
-        public String PostCode { get; set; }
+        public int PostCode { get; set; }
         [Required]
         public String City { get; set; }
         [Required]
@@ -23,9 +23,9 @@ namespace SWTS.Models
 
         [Required]
         [Display(Name = "Latitude")]
-        public int Lat { get; set; }
+        public double Lat { get; set; }
         [Required]
         [Display(Name = "Longitude")]
-        public int Lng { get; set; }
+        public double Lng { get; set; }
     }
 }
