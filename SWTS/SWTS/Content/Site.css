@@ -1,7 +1,12 @@
 ﻿header, footer, nav, section {
     display: block;
 }
-
+.container {
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
 
 /* Styles for basic forms
 -----------------------------------------------------------*/
@@ -51,4 +56,75 @@ textarea {
 
 .validation-summary-valid {
     display: none;
+}
+
+/*Menu*/
+#leftMenu {
+    margin-top: -10px;
+}
+#leftMenu .accordion-group {
+    margin-bottom: 0px;
+    border:0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}    
+
+#leftMenu .accordion-heading {
+    height: 40px;
+    border-bottom: 1px solid #f9f9f9; /* inner stroke */
+    background-color: #333;
+    list-style-type:none;
+}  
+
+#leftMenu .accordion-heading  a{  
+    color: #f9f9f9; /* text color */
+    padding: 10px 0 0 10px;
+    text-decoration:none;
+    font-weight:bold;  
+    display:block;
+    text-transform: uppercase;
+}
+
+#leftMenu .accordion-heading  a:hover{  
+    color:#ccc     
+}
+
+#leftMenu .accordion-heading .active {
+    width: 182px;
+    height: 34px;
+    border: 1px solid #5b5b5b; /* inner stroke */
+    background-color: #333; /* layer fill content */
+    background-image: -moz-linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
+    background-image: -o-linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
+    background-image: -webkit-linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
+    background-image: linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
+}
+.truck {
+    width: 50px;
+    margin-left: 20px;
+    margin-top: 5px;
+    float: left;
+}
+.navbar a {
+    color: white;
+}
+.footer {
+	box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+}
+.footer {
+    float: left;
+	height:49px;
+	border-top:1px solid #3e3d3d;
+	background-color:#333333;
+    color: white;
+}
+.footer p 
+{
+    padding-top: 17px;
+    padding-left: 27px;
+    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    color: #E4E4E4;
+    -webkit-font-smoothing: antialiased;
 }

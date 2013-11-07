@@ -26,6 +26,9 @@ namespace SWTS.Controllers
         [AllowAnonymous]
         public ActionResult Login()
         {
+            if (User.Identity.IsAuthenticated)
+                return RedirectToAction("Suppliers", "Home");
+
             return View("../Account/Login");
         }
 
