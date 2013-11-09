@@ -23,8 +23,14 @@
                             <img class="truck" alt="truck" src="@Url.Content("~/Content/images/tracking-icon.png")" />
                             <a class="navbar-brand" href="#">Small Web based Suppliers Tracker</a>
                         </div>
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "btn btn-sm btn-danger pull-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                        }
                     </div>
                 </div>
+                
                 
                 <div class="col-xs-2">
                     @RenderSection("navigation", required: false)
@@ -44,6 +50,8 @@
         @RenderSection("scripts", required: false)
     </body>
 </html>
+
+
 
 
 

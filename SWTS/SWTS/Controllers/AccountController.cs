@@ -44,7 +44,7 @@ namespace SWTS.Controllers
         {
             WebSecurity.Logout();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Home");
         }
 
         //
@@ -53,7 +53,7 @@ namespace SWTS.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            return View("Register");
         }
 
         //

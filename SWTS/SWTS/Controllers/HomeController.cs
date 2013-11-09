@@ -43,8 +43,9 @@ namespace SWTS.Controllers
         [HttpGet]
         public ActionResult Supplier(int id)
         {
+            var model = this._service.GetSupplier(id);
             // Query specific supplier table
-            return View("Supplier");
+            return View("Supplier", model);
         }
 
         [HttpGet]

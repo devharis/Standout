@@ -1,5 +1,20 @@
-﻿@{
+﻿@using System.Globalization
+@model SWTS.Models.Supplier
+@{
     ViewBag.Title = "Supplier";
 }
-
-<h2>Supplier</h2>
+@if (Model != null)
+{
+    
+    <h2>@Model.Name</h2>
+    @Html.Hidden(Model.Lat.ToString(CultureInfo.InvariantCulture))
+    @Html.Hidden(Model.Lng.ToString(CultureInfo.InvariantCulture))
+    
+    <p>@Model.Address</p>
+    <p>@Model.PostCode</p>
+    <p>@Model.City</p>
+    <p>@Model.Country</p>
+    <p>@Model.Phone</p>
+    
+    <div id="map-canvas" class="pull-right"></div>
+}
