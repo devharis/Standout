@@ -168,7 +168,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Categories.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Interface\ISupplierRepository.cs" />
     <Compile Include="Models\Interface\ISupplierService.cs" />
     <Compile Include="Models\Supplier.cs" />

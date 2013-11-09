@@ -1,6 +1,6 @@
 ﻿namespace SWTS.Models
 {
-    public enum Categories
+    public enum Category
     {
         Diary,
         Bread,

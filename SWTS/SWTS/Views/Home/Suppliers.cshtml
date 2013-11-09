@@ -9,15 +9,15 @@
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="dropdown-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseOne">
-                    <i class="glyphicon ui-icon-gear glyphicon-home"></i> @Categories.Diary
+                    <i class="glyphicon ui-icon-gear glyphicon-home"></i> @Category.Diary
                 </a>
             </div>
-            <div id="collapseOne" class="accordion-body collapse">
-                <div class="dropdown-inner">
+            <div id="collapseOne" class="collapse">
+                <div>
                     <ul>
-                        @foreach (var item in Model.Where(item => item.Category == Categories.Diary))
+                        @foreach (var item in Model.Where(item => item.Category == Category.Diary.ToString()))
                         {
-                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                            <li>@Html.ActionLink(item.Name, "Supplier", new { id = item.SupplierId })</li>
                         }
                     </ul>
                 </div>
@@ -26,15 +26,15 @@
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="dropdown-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseTwo">
-                    <i class="glyphicon glyphicon-th"></i> @Categories.Bread
+                    <i class="glyphicon glyphicon-th"></i> @Category.Bread
                 </a>
             </div>
-            <div id="collapseTwo" class="accordion-body collapse">
-                <div class="dropdown-inner">
+            <div id="collapseTwo" class="collapse">
+                <div>
                     <ul>
-                        @foreach (var item in Model.Where(item => item.Category == Categories.Bread))
+                        @foreach (var item in Model.Where(item => item.Category == Category.Bread.ToString()))
                         {
-                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                            <li>@Html.ActionLink(item.Name, "Supplier", new { id = item.SupplierId })</li>
                         }
                     </ul>
                 </div>
@@ -43,15 +43,15 @@
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="dropdown-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseThree">
-                    <i class="glyphicon glyphicon-leaf"></i> @Categories.Meat
+                    <i class="glyphicon glyphicon-leaf"></i> @Category.Meat
                 </a>
             </div>
-            <div id="collapseThree" class="accordion-body collapse">
-                <div class="accordion-inner">
+            <div id="collapseThree" class="collapse">
+                <div>
                     <ul>
-                        @foreach (var item in Model.Where(item => item.Category == Categories.Meat))
+                        @foreach (var item in Model.Where(item => item.Category == Category.Meat.ToString()))
                         {
-                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                            <li>@Html.ActionLink(item.Name, "Supplier", new { id = item.SupplierId })</li>
                         }
                     </ul>                 
                 </div>
@@ -60,15 +60,15 @@
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="dropdown-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFour">
-                    <i class="glyphicon glyphicon-star"></i> @Categories.Confectionery
+                    <i class="glyphicon glyphicon-star"></i> @Category.Confectionery
                 </a>
             </div>
-            <div id="collapseFour" class="accordion-body collapse">
-                <div class="accordion-inner">
+            <div id="collapseFour" class="collapse">
+                <div>
                     <ul>
-                        @foreach (var item in Model.Where(item => item.Category == Categories.Confectionery))
+                        @foreach (var item in Model.Where(item => item.Category == Category.Confectionery.ToString()))
                         {
-                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                            <li>@Html.ActionLink(item.Name, "Supplier", new { id = item.SupplierId })</li>
                         }
                     </ul>                 
                 </div>
@@ -77,15 +77,15 @@
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="dropdown-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseFive">
-                    <i class="glyphicon glyphicon-cog"></i> @Categories.Tobacco
+                    <i class="glyphicon glyphicon-cog"></i> @Category.Tobacco
                 </a>
             </div>
-            <div id="collapseFive" class="accordion-body collapse">
-                <div class="accordion-inner">
+            <div id="collapseFive" class="collapse">
+                <div>
                     <ul>
-                        @foreach (var item in Model.Where(item => item.Category == Categories.Tobacco))
+                        @foreach (var item in Model.Where(item => item.Category == Category.Tobacco.ToString()))
                         {
-                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                            <li>@Html.ActionLink(item.Name, "Supplier", new { id = item.SupplierId })</li>
                         }
                     </ul>                 
                 </div>
@@ -94,15 +94,15 @@
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="dropdown-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseSix">
-                    <i class="glyphicon glyphicon-file"></i> @Categories.Cosmetics
+                    <i class="glyphicon glyphicon-file"></i> @Category.Cosmetics
                 </a>
             </div>
-            <div id="collapseSix" class="accordion-body collapse">
-                <div class="accordion-inner">
+            <div id="collapseSix" class="collapse">
+                <div>
                     <ul>
-                        @foreach (var item in Model.Where(item => item.Category == Categories.Cosmetics))
+                        @foreach (var item in Model.Where(item => item.Category == Category.Cosmetics.ToString()))
                         {
-                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                            <li>@Html.ActionLink(item.Name, "Supplier", new { id = item.SupplierId })</li>
                         }
                     </ul>                 
                 </div>

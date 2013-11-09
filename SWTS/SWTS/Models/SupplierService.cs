@@ -6,7 +6,7 @@ namespace SWTS.Models
 {
     public class SupplierService : ISupplierService
     {
-        private ISupplierRepository _repository;
+        private readonly ISupplierRepository _repository;
 
         public SupplierService()
             : this(new SupplierRepository())

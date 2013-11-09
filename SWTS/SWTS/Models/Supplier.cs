@@ -23,7 +23,7 @@ namespace SWTS.Models
         [Required]
         public String Phone { get; set; }
         [Required]
-        public Categories Category { get; set; }
+        public String Category { get; set; }
 
         [Required]
         [Display(Name = "Latitude")]
