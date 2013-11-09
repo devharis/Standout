@@ -1,10 +1,9 @@
-﻿@model List<SWTS.Models.Supplier>
+﻿@model List<Supplier>
 @using SWTS.Models
 @{
     ViewBag.Title = "Suppliers";
 
 }
-
 @section navigation{
     <div class="ui-menu" id="leftMenu">
         <div class="accordion-group">
@@ -16,9 +15,10 @@
             <div id="collapseOne" class="accordion-body collapse">
                 <div class="dropdown-inner">
                     <ul>
-                        <li>This is one</li>
-                        <li>This is two</li>
-                        <li>This is Three</li>
+                        @foreach (var item in Model.Where(item => item.Category == Categories.Diary))
+                        {
+                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -32,9 +32,10 @@
             <div id="collapseTwo" class="accordion-body collapse">
                 <div class="dropdown-inner">
                     <ul>
-                        <li>This is one</li>
-                        <li>This is two</li>
-                        <li>This is Three</li>
+                        @foreach (var item in Model.Where(item => item.Category == Categories.Bread))
+                        {
+                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -45,12 +46,13 @@
                     <i class="glyphicon glyphicon-leaf"></i> @Categories.Meat
                 </a>
             </div>
-            <div id="collapseThree" class="accordion-body collapse" style="height: 0px;">
+            <div id="collapseThree" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <ul>
-                        <li>This is one</li>
-                        <li>This is two</li>
-                        <li>This is Three</li>
+                        @foreach (var item in Model.Where(item => item.Category == Categories.Meat))
+                        {
+                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                        }
                     </ul>                 
                 </div>
             </div>
@@ -61,12 +63,13 @@
                     <i class="glyphicon glyphicon-star"></i> @Categories.Confectionery
                 </a>
             </div>
-            <div id="collapseFour" class="accordion-body collapse" style="height: 0px;">
+            <div id="collapseFour" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <ul>
-                        <li>This is one</li>
-                        <li>This is two</li>
-                        <li>This is Three</li>
+                        @foreach (var item in Model.Where(item => item.Category == Categories.Confectionery))
+                        {
+                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                        }
                     </ul>                 
                 </div>
             </div>
@@ -77,12 +80,13 @@
                     <i class="glyphicon glyphicon-cog"></i> @Categories.Tobacco
                 </a>
             </div>
-            <div id="collapseFive" class="accordion-body collapse" style="height: 0px;">
+            <div id="collapseFive" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <ul>
-                        <li>This is one</li>
-                        <li>This is two</li>
-                        <li>This is Three</li>
+                        @foreach (var item in Model.Where(item => item.Category == Categories.Tobacco))
+                        {
+                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                        }
                     </ul>                 
                 </div>
             </div>
@@ -93,29 +97,16 @@
                     <i class="glyphicon glyphicon-file"></i> @Categories.Cosmetics
                 </a>
             </div>
-            <div id="collapseSix" class="accordion-body collapse" style="height: 0px;">
+            <div id="collapseSix" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <ul>
-                        <li>This is one</li>
-                        <li>This is two</li>
-                        <li>This is Three</li>
+                        @foreach (var item in Model.Where(item => item.Category == Categories.Cosmetics))
+                        {
+                            <li>@Html.ActionLink(item.Name, "Supplier", "Home", new { id = item.SupplierId })</li>
+                        }
                     </ul>                 
                 </div>
             </div>
         </div>
     </div>
-}
-
-<h2>Suppliers</h2>
-@foreach (var supplier in Model)
-{
-    <p>@supplier.Name</p>
-    <p>@supplier.Address</p>
-    <p>@supplier.PostCode</p>
-    <p>@supplier.City</p>
-    <p>@supplier.Country</p>
-    <p>@supplier.Email</p>
-    <p>@supplier.Phone</p>
-    <p>@supplier.Lat</p>
-    <p>@supplier.Lng</p>
 }

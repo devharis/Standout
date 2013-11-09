@@ -22,6 +22,8 @@ namespace SWTS.Models
         public String Email { get; set; }
         [Required]
         public String Phone { get; set; }
+        [Required]
+        public Categories Category { get; set; }
 
         [Required]
         [Display(Name = "Latitude")]
