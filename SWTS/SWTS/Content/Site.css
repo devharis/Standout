@@ -108,6 +108,10 @@ textarea {
     text-decoration: none;
     color: black;
 }
+#leftMenu .subMenu li a:hover{
+    color: #505050; 
+}
+
 .truck {
     width: 50px;
     margin-left: 20px;
@@ -156,4 +160,10 @@ div#map-canvas {
 }
 .supplierInfo {
     margin-left: 15px;
+}
+#logoutForm a {
+    display: block;
+}
+.newSupplier {
+    margin: 15px 0px 0px 40px;
 }

@@ -10,7 +10,7 @@ namespace SWTS.Controllers
     [InitializeSimpleMembership]
     public class HomeController : Controller
     {
-        private ISupplierService _service;
+        private readonly ISupplierService _service;
 
         public HomeController()
             : this(new SupplierService())
@@ -60,7 +60,7 @@ namespace SWTS.Controllers
         {
             // Query specific supplier table
             var model = new Supplier();
-            return View("Supplier", model);
+            return View("AddSupplier", model);
         }
 
         [HttpPost]
