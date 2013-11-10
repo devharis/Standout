@@ -5,16 +5,24 @@
 }
 @if (Model != null)
 {
+    <div class="supplier col-xs-8">
+        <h2>@Model.Name</h2>
+        <div class="supplierInfo col-xs-7">
+            @Html.Hidden(Model.Lat.ToString(CultureInfo.InvariantCulture), null, new { @class = "mapLat"})
+            @Html.Hidden(Model.Lng.ToString(CultureInfo.InvariantCulture), null, new { @class = "mapLng"} )
     
-    <h2>@Model.Name</h2>
-    @Html.Hidden(Model.Lat.ToString(CultureInfo.InvariantCulture))
-    @Html.Hidden(Model.Lng.ToString(CultureInfo.InvariantCulture))
-    
-    <p>@Model.Address</p>
-    <p>@Model.PostCode</p>
-    <p>@Model.City</p>
-    <p>@Model.Country</p>
-    <p>@Model.Phone</p>
-    
-    <div id="map-canvas" class="pull-right"></div>
+            <h4><i class="glyphicon glyphicon-home"></i> Address</h4>
+            <p>@Model.Address</p>
+            <p>@Model.PostCode, @Model.City</p>
+            <p>@Model.Country</p>
+            <h4><i class="glyphicon glyphicon-phone"></i> Phone</h4>
+            <p>@Model.Phone</p>
+            <h4> <i class="glyphicon glyphicon-envelope"></i> Email</h4>
+            <p>@Model.Email</p>
+        </div>
+        <div class="map col-xs-4">
+            <h4><i class="glyphicon glyphicon-map-marker"></i> Map location</h4>
+            <div id="map-canvas"></div>
+        </div>
+    </div>
 }

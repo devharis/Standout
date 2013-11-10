@@ -100,6 +100,10 @@ textarea {
     background-image: -webkit-linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
     background-image: linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
 }
+#leftMenu .in li {
+    list-style-type: none;
+    margin: 5px 0px 0px 0px;
+}
 .truck {
     width: 50px;
     margin-left: 20px;
@@ -131,4 +135,21 @@ textarea {
     margin-top: 9px;
     margin-right: 50px;
 }
- div#map-canvas { width: 500px; height: 500px; }
+div#map-canvas {
+    width: 400px;
+    height: 350px;
+}
+
+.supplier h2{
+    width: 110%;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 10px;
+    margin-left: 20px;
+}
+.supplier a {
+    float: left;
+    margin-top: 20px;
+}
+.supplierInfo {
+    margin-left: 15px;
+}

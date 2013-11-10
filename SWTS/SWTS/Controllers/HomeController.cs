@@ -27,17 +27,24 @@ namespace SWTS.Controllers
         public ActionResult Login()
         {
             if (User.Identity.IsAuthenticated)
-                return RedirectToAction("Suppliers", "Home");
+                return RedirectToAction("Index", "Home");
 
             return View("../Account/Login");
         }
 
         [HttpGet]
-        public ActionResult Suppliers()
+        public ActionResult Index()
+        {
+            // Query all suppliers
+            return View("Index");
+        }
+
+        [HttpGet]
+        public ActionResult LoadMenu()
         {
             var model = this._service.GetAllSuppliers();
             // Query all suppliers
-            return View("Suppliers", model);
+            return PartialView("_Menu", model);
         }
 
         [HttpGet]
