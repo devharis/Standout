@@ -7,12 +7,12 @@
 <div class="ui-menu" id="leftMenu">
     <div class="accordion-group">
         <div class="accordion-heading">
-            <a class="dropdown-toggle" data-toggle="collapse" data-parent="#leftMenu" href="#collapseOne">
+            <a class="dropdown-toggle" data-toggle="collapse" href="#collapseOne">
                 <i class="glyphicon ui-icon-gear glyphicon-home"></i> @Category.Diary
             </a>
         </div>
         <div id="collapseOne" class="collapse">
-            <div>
+            <div class="subMenu">
                 <ul>
                     @foreach (var item in Model.Where(item => item.Category == Category.Diary.ToString()))
                     {
@@ -29,7 +29,7 @@
             </a>
         </div>
         <div id="collapseTwo" class="collapse">
-            <div>
+            <div class="subMenu">
                 <ul>
                     @foreach (var item in Model.Where(item => item.Category == Category.Bread.ToString()))
                     {
@@ -46,7 +46,7 @@
             </a>
         </div>
         <div id="collapseThree" class="collapse">
-            <div>
+            <div class="subMenu">
                 <ul>
                     @foreach (var item in Model.Where(item => item.Category == Category.Meat.ToString()))
                     {
@@ -63,7 +63,7 @@
             </a>
         </div>
         <div id="collapseFour" class="collapse">
-            <div>
+            <div class="subMenu">
                 <ul>
                     @foreach (var item in Model.Where(item => item.Category == Category.Confectionery.ToString()))
                     {
@@ -80,7 +80,7 @@
             </a>
         </div>
         <div id="collapseFive" class="collapse">
-            <div>
+            <div class="subMenu">
                 <ul>
                     @foreach (var item in Model.Where(item => item.Category == Category.Tobacco.ToString()))
                     {
@@ -97,7 +97,7 @@
             </a>
         </div>
         <div id="collapseSix" class="collapse">
-            <div>
+            <div class="subMenu">
                 <ul>
                     @foreach (var item in Model.Where(item => item.Category == Category.Cosmetics.ToString()))
                     {

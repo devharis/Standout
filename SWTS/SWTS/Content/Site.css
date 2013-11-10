@@ -100,9 +100,13 @@ textarea {
     background-image: -webkit-linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
     background-image: linear-gradient(90deg, #4b4b4b 0%, #555 100%); /* gradient overlay */
 }
-#leftMenu .in li {
+#leftMenu .subMenu li {
     list-style-type: none;
     margin: 5px 0px 0px 0px;
+}
+#leftMenu .subMenu li a {
+    text-decoration: none;
+    color: black;
 }
 .truck {
     width: 50px;

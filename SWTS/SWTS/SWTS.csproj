@@ -282,7 +282,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Home\Supplier.cshtml" />
-    <Content Include="Views\Home\Suppliers.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
