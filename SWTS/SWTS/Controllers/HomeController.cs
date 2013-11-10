@@ -58,7 +58,6 @@ namespace SWTS.Controllers
         [HttpGet]
         public ActionResult AddSupplier()
         {
-            // Query specific supplier table
             var model = new Supplier();
             return View("AddSupplier", model);
         }
@@ -71,7 +70,7 @@ namespace SWTS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    // Insert supplier
+                    supplier = this._service.AddSupplier(supplier);
                 }
             }
             catch (Exception ex)
@@ -79,7 +78,7 @@ namespace SWTS.Controllers
                 ModelState.AddModelError(String.Empty, ex.Message);
                 return View("Error");
             }
-            return View("Supplier");
+            return RedirectToAction("Supplier", new { id = supplier.SupplierId});
         }
 
         [HttpGet]

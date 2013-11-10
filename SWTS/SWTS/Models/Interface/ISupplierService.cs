@@ -6,5 +6,6 @@ namespace SWTS.Models.Interface
     {
         List<Supplier> GetAllSuppliers();
         Supplier GetSupplier(int id);
+        Supplier AddSupplier(Supplier supplier);
     }
 }

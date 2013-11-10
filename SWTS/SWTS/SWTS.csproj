@@ -283,6 +283,7 @@
     <Content Include="Views\Home\Supplier.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\AddSupplier.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -167,3 +167,6 @@ div#map-canvas {
 .newSupplier {
     margin: 15px 0px 0px 40px;
 }
+.saveSupplierBtn {
+    margin-top: 15px;
+}

@@ -29,5 +29,12 @@ namespace SWTS.Models
             var supplier = this._repository.Find<Supplier>(o => o.SupplierId == id);
             return supplier;
         }
+
+        public Supplier AddSupplier(Supplier supplier)
+        {
+            this._repository.Add(supplier);
+            this._repository.Save();
+            return this._repository.Query<Supplier>().FirstOrDefault(o => o.Name == supplier.Name);
+        }
     }
 }

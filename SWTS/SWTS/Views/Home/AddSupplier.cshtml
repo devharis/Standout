@@ -1,7 +1,91 @@
-﻿@model SWTS.Models.Supplier
-
+﻿@model Supplier
+@using SWTS.Models
 @{
-    ViewBag.Title = "Add supplier";
+    ViewBag.Title = "New supplier";
 }
+<div class="supplier col-xs-8">
+    <h2>New supplier</h2>
 
-<h2>title</h2>
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+        @Html.AntiForgeryToken()
+
+        <div class="supplierInfo form-group col-xs-6">
+            
+            <h4><i class="glyphicon glyphicon-briefcase"></i> Supplier</h4>
+
+            <i>Name</i>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Name, null, new { @class = "form-control", @placeholder = "Name" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <i>Category</i>
+            <div class="editor-field">
+                @Html.DropDownListFor(m => m.Category, new SelectList(Enum.GetValues(typeof(Category))), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Category)
+            </div>
+            
+            <h4><i class="glyphicon glyphicon-home"></i> Address</h4>
+            
+            <i>Address</i>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Address, null, new { @class = "form-control", @placeholder = "Address" })
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+            
+            <i>Post code</i>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.PostCode, null, new { @class = "form-control", @placeholder = "Post code" })
+                @Html.ValidationMessageFor(model => model.PostCode)
+            </div>
+
+            <i>City</i>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.City, null, new { @class = "form-control", @placeholder = "City" })
+                @Html.ValidationMessageFor(model => model.City)
+            </div>
+
+            <i>Country</i>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Country, null, new { @class = "form-control", @placeholder = "Country" })
+                @Html.ValidationMessageFor(model => model.Country)
+            </div>
+            
+            <button type="submit" class="saveSupplierBtn btn btn-sm btn-default"><i class="glyphicon glyphicon-ok-sign"></i> Save supplier</button>  
+        </div>
+    
+    
+        <div class="form-group col-xs-6">
+            <h4><i class="glyphicon glyphicon-user"></i> Contact</h4>
+
+            <i>Email</i>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <i>Phone</i>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Phone, null, new { @class = "form-control", @placeholder = "Phone" })
+                @Html.ValidationMessageFor(model => model.Phone)
+            </div>
+
+        </div>
+        
+        <div class="map col-xs-4">
+            <h4><i class="glyphicon glyphicon-map-marker"></i> Map location</h4>
+            <div id="map-canvas"></div>
+        </div>
+
+        <div class=" editor-field">
+            @Html.HiddenFor(model => model.Lat, new { @class = "lat" })
+            @Html.HiddenFor(model => model.Lng, new { @class = "lng" })
+        </div>
+        
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

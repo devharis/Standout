@@ -13,7 +13,7 @@ namespace SWTS.Models
         public String Address { get; set; }
         [Required]
         [Display(Name = "Post code")]
-        public int PostCode { get; set; }
+        public int? PostCode { get; set; }
         [Required]
         public String City { get; set; }
         [Required]
