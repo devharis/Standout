@@ -26,11 +26,11 @@
                 @Html.ValidationMessageFor(model => model.Category)
             </div>
             
-            <h4><i class="glyphicon glyphicon-home"></i> Address</h4>
+            <h4 class="addressSection"><i class="glyphicon glyphicon-home"></i> Address</h4>
             
             <i>Address</i>
             <div class="editor-field">
-                @Html.TextBoxFor(model => model.Address, null, new { @class = "form-control", @placeholder = "Address" })
+                @Html.TextBoxFor(model => model.Address, null, new { @class = "form-control geocodeAddress", @placeholder = "Address" })
                 @Html.ValidationMessageFor(model => model.Address)
             </div>
             
@@ -42,22 +42,22 @@
 
             <i>City</i>
             <div class="editor-field">
-                @Html.TextBoxFor(model => model.City, null, new { @class = "form-control", @placeholder = "City" })
+                @Html.TextBoxFor(model => model.City, null, new { @class = "form-control geocodeCity", @placeholder = "City" })
                 @Html.ValidationMessageFor(model => model.City)
             </div>
 
             <i>Country</i>
             <div class="editor-field">
-                @Html.TextBoxFor(model => model.Country, null, new { @class = "form-control", @placeholder = "Country" })
+                @Html.TextBoxFor(model => model.Country, null, new { @class = "form-control geocodeCountry", @placeholder = "Country" })
                 @Html.ValidationMessageFor(model => model.Country)
             </div>
             
-            <button type="submit" class="saveSupplierBtn btn btn-sm btn-default"><i class="glyphicon glyphicon-ok-sign"></i> Save supplier</button>  
+            <button type="submit" class="saveSupplierBtn btn btn-sm btn-success"><i class="glyphicon glyphicon-ok-sign"></i> Save supplier</button>  
         </div>
     
     
         <div class="form-group col-xs-6">
-            <h4><i class="glyphicon glyphicon-user"></i> Contact</h4>
+            <h4><i class="glyphicon glyphicon-envelope"></i> Contact</h4>
 
             <i>Email</i>
             <div class="editor-field">
