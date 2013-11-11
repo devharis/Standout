@@ -147,7 +147,11 @@ div#map-canvas {
     width: 400px;
     height: 350px;
 }
-
+.loginBox {
+    margin-bottom: 150px;
+    margin-top: 60px;
+  
+}
 .supplier h2{
     width: 110%;
     border-bottom: 1px solid #eeeeee;

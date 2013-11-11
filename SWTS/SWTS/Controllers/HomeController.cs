@@ -82,11 +82,18 @@ namespace SWTS.Controllers
         }
 
         [HttpGet]
-        [ValidateAntiForgeryToken]
         public ActionResult EditSupplier(int id)
         {
-            // Get supplier and display
-            return View("Supplier");
+            try
+            {
+                var model = this._service.GetSupplier(id);
+                return PartialView("_EditSupplier", model);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(String.Empty, ex.Message);
+                return View("Error");
+            }
         }
 
         [HttpPost]
@@ -97,7 +104,8 @@ namespace SWTS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    // Insert edited supplier
+                    this._service.Update(supplier);
+                    return RedirectToAction("Supplier", new { id = supplier.SupplierId });
                 }
             }
             catch (Exception ex)
@@ -105,7 +113,7 @@ namespace SWTS.Controllers
                 ModelState.AddModelError(String.Empty, ex.Message);
                 return View("Error");
             }
-            return View("Supplier");
+            return View("Error");
         }
 
         [HttpPost]
@@ -116,7 +124,7 @@ namespace SWTS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    // Delete selected supplier
+                    this._service.DeleteSupplier(id);
                 }
             }
             catch (Exception ex)
@@ -124,7 +132,7 @@ namespace SWTS.Controllers
                 ModelState.AddModelError(String.Empty, ex.Message);
                 return View("Error");
             }
-            return View("Supplier");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

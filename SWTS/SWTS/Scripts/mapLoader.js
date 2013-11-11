@@ -2,9 +2,15 @@
 var map;
 function initialize() {
     geocoder = new google.maps.Geocoder();
-    var lat = parseFloat($("div.supplierInfo .mapLat").attr("name"));
-    var lng = parseFloat($("div.supplierInfo .mapLng").attr("name"));
-    var supplier = $("div.supplier h2").html();
+    
+    if ($("div.supplierInfo .mapLat").attr("name") > 0) {
+        var lat = parseFloat($("div.supplierInfo .mapLat").attr("name"));
+        var lng = parseFloat($("div.supplierInfo .mapLng").attr("name"));
+    }
+    else if($("div.supplier .mapLat").attr("value") > 0){
+        var lat = $("div.supplier .mapLat").attr("value").toString().replace(",", ".");
+        var lng = $("div.supplier .mapLng").attr("value").toString().replace(",", ".");
+    }
     
     var latAndLng = new google.maps.LatLng(lat, lng);
     var mapOptions = {
@@ -17,7 +23,6 @@ function initialize() {
     var marker = new google.maps.Marker({
         position: latAndLng,
         map: map,
-        title: supplier
     });
 }
 
@@ -43,15 +48,15 @@ function codeAddress(addressInput, cityInput, countryInput) {
     });
 }
 
-$('.geocodeAddress').change('input', function () {
+$('.geocodeAddress').on('change', function () {
     if ($(".geocodeAddress").attr("value").length >= 3)
     codeAddress($('.geocodeAddress').attr("value"), $('.geocodeCity').attr("value"), $('.geocodeCountry').attr("value"));
 });
-$('.geocodeCity').change('input', function () {
+$('.geocodeCity').on('change', function () {
     if ($(".geocodeCity").attr("value").length >= 3)
         codeAddress($('.geocodeAddress').attr("value"), $('.geocodeCity').attr("value"), $('.geocodeCountry').attr("value"));
 });
-$('.geocodeCountry').change('input', function () {
+$('.geocodeCountry').on('change', function () {
     if ($(".geocodeCountry").attr("value").length >= 3)
         codeAddress($('.geocodeAddress').attr("value"), $('.geocodeCity').attr("value"), $('.geocodeCountry').attr("value"));
 });

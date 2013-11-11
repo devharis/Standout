@@ -36,5 +36,18 @@ namespace SWTS.Models
             this._repository.Save();
             return this._repository.Query<Supplier>().FirstOrDefault(o => o.Name == supplier.Name);
         }
+
+        public void DeleteSupplier(int id)
+        {
+            var supplier = this._repository.Find<Supplier>(o => o.SupplierId == id);
+            this._repository.Delete(supplier);
+            this._repository.Save();
+        }
+
+        public void Update(Supplier supplier)
+        {
+            this._repository.Update(supplier);
+            this._repository.Save();
+        }
     }
 }
