@@ -1,7 +1,27 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-@if (TempData["UserMessage"] != null)
-{
-    <p>@TempData["UserMessage"]</p>
-}
+<div class="supplier col-xs-8">
+    <h2>Welcome!</h2>
+    <div class="supplierStart">
+        <small>
+            This application is a small web based supplier tracker (SWST), used to track suppliers on a map which helps you decide which suppliers you should
+            hire for the shortest possible transport distance. 
+        </small>
+        <p></p>
+        <blockquote>
+            <p>How does it work?</p>
+            <small>In the menu section to the left you can navigate through the diffrent categories and choose a supplier you want to view, edit or simply delete. In this section all 
+                suppliers added will be gathered aswell.
+            </small>
+        </blockquote>
+        <blockquote>
+            <p>How do i add a new supplier then?</p>
+            <small>Directly under the menu section there is a "New supplier" button which redirects you to a add page. From there you can add desired supplier.</small>
+        </blockquote>
+        <i class = "text-danger">Good luck - devHaris</i>
+    </div>
+</div>
+
+
+

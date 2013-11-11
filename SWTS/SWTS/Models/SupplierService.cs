@@ -4,6 +4,10 @@ using SWTS.Models.Interface;
 
 namespace SWTS.Models
 {
+    /// <summary>
+    ///  This class represents all specific CRUD functionality which uses
+    ///  methods fom ISupplierService which it inherits from.
+    /// </summary>
     public class SupplierService : ISupplierService
     {
         private readonly ISupplierRepository _repository;

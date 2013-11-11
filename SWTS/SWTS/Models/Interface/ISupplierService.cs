@@ -2,6 +2,9 @@
 
 namespace SWTS.Models.Interface
 {
+    /// <summary>
+    ///  This interface represent method stubs for SupplerService
+    /// </summary>
     public interface ISupplierService
     {
         List<Supplier> GetAllSuppliers();

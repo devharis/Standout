@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Transactions;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Security;
-using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using SWTS.Filters;
@@ -13,12 +7,22 @@ using SWTS.Models;
 
 namespace SWTS.Controllers
 {
+    /// <summary>
+    ///  This class main task is to take care of the controller actions for login.
+    /// </summary>
+    /// 
     [Authorize]
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
-        //
-        // POST: /Account/Login
+        /**
+         * GET: /Index/Home
+         * 
+         * Method which triggers when user tries to login.
+         * 
+         * @params LoginModel model
+         * @returns RedirectToAction Index/Home
+         */
 
         [HttpPost]
         [AllowAnonymous]
@@ -35,8 +39,14 @@ namespace SWTS.Controllers
             return View(model);
         }
 
-        //
-        // POST: /Account/LogOff
+        /**
+          * POST: LogOff
+          * 
+          * Method which triggers when user tries to logout.
+          * 
+          * @params
+          * @returns RedirectToAction Login/Home
+          */
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -46,43 +56,6 @@ namespace SWTS.Controllers
 
             return RedirectToAction("Login", "Home");
         }
-
-        //
-        // GET: /Account/Register
-
-        [AllowAnonymous]
-        public ActionResult Register()
-        {
-            return View("Register");
-        }
-
-        //
-        // POST: /Account/Register
-
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                // Attempt to register the user
-                try
-                {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Suppliers", "Home");
-                }
-                catch (MembershipCreateUserException e)
-                {
-                    ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
-                }
-            }
-
-            // If we got this far, something failed, redisplay form
-            return View(model);
-        }
-
 
         #region Helpers
         private ActionResult RedirectToLocal(string returnUrl)

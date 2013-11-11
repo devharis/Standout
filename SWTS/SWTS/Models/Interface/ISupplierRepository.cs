@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace SWTS.Models.Interface
 {
+    /// <summary>
+    ///  This interface represent method stubs for SupplerRepository
+    /// </summary>
     public interface ISupplierRepository
     {
         void Add<T>(T entity) where T : class;

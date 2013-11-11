@@ -3,6 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SWTS.Models
 {
+    /// <summary>
+    ///  This class is a model for a Supplier. 
+    ///  It uses data annotations for validation.
+    /// </summary>
     public class Supplier
     {
         [Key]

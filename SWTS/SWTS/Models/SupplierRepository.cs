@@ -7,9 +7,13 @@ using SWTS.Models.Interface;
 
 namespace SWTS.Models
 {
+    /// <summary>
+    ///  This class represents all abstract CRUD functionality needed for database use.
+    ///  It inherits from interface ISupplierRepository
+    /// </summary>
     public class SupplierRepository : ISupplierRepository
     {
-        private DbContext _context;
+        private readonly DbContext _context;
 
         public SupplierRepository()
         {

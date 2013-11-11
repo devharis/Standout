@@ -6,11 +6,6 @@
 @if (Model != null)
 {
     <div class="supplier col-xs-8">
-         @if (TempData["UserMessage"] != null)
-         {
-            <p>@TempData["UserMessage"]</p>
-         }
-
         <h2>@Model.Name</h2>
         <div class="supplierInfo col-xs-7">
             @Html.Hidden(Model.SupplierId.ToString(CultureInfo.InvariantCulture), null, new { @class = "supplierId"})

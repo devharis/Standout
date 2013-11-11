@@ -57,7 +57,9 @@ textarea {
 .validation-summary-valid {
     display: none;
 }
-
+.supplierStart {
+    margin-left: 26px;
+}
 /*Menu*/
 #leftMenu {
     margin-top: -10px;
@@ -151,6 +153,9 @@ div#map-canvas {
     margin-bottom: 150px;
     margin-top: 60px;
   
+}
+.checkbox {
+    margin-left: 15px;
 }
 .loginBox h4 {
     font-family: Courier New, Courier, monospace;
