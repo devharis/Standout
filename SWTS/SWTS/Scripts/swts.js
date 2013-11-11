@@ -1,4 +1,6 @@
 ﻿$(document).ready(function () {
+    
+    // This function uses ajax to call controller action and renders it to a div.
     $('.editSupplier').on( "click", function () {
         $.ajax({
             url: '/Home/EditSupplier',
@@ -16,5 +18,10 @@
             }            
         });
 
-    });    
+    });
+    
+    // This function is changing menu icons on click
+    $('.ui-menu .accordion-heading').on("click", function (e) {
+        $(this).find('i').toggleClass('glyphicon-minus-sign glyphicon-plus-sign', 200);
+    });
 });
