@@ -15,21 +15,23 @@
         {
             <div class="alert alert-info alert-dismissable  col-xs-10">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <strong>Pssst!</strong> Login is admin & qwerty as password
+              <strong>Pssst!</strong> Login is admin & qwerty password
             </div>
-            @Html.ValidationSummary(true)
+            <i>@Html.ValidationSummary(true)</i>
             @Html.AntiForgeryToken()
             <form class="form-inline">
                 <div class="form-group">
-                    <div class="form-group">
+                    <div class="form-group col-xs-5">
+                        <i>Username @Html.ValidationMessageFor(m => m.UserName, "- required", new { @class = "redclass" })</i>
                         @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "Username"})
-                        @Html.ValidationMessageFor(m => m.UserName)
+                        
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-xs-5">
+                        <i>Password @Html.ValidationMessageFor(m => m.Password, "- required", new { @class = "redclass" })</i>
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password"})
-                        @Html.ValidationMessageFor(m => m.Password)
+                        
                     </div>
-                    <button class="btn btn-sm btn-success" type="submit">Sign in</button>
+                    <button class="loginButton btn btn-sm btn-success" type="submit">Sign in</button>
                 </div>
                 <p></p>
                 <div class="checkbox">

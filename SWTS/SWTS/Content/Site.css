@@ -50,8 +50,8 @@ textarea {
 }
 
 .validation-summary-errors {
-    font-weight: bold;
     color: #f00;
+    float: left;
 }
 
 .validation-summary-valid {
@@ -153,7 +153,10 @@ div#map-canvas {
   
 }
 .loginBox h4 {
-    font-family: �Courier New�, Courier, monospace;
+    font-family: Courier New, Courier, monospace;
+}
+.loginBox .loginButton {
+    margin-top: 21px;   
 }
 .supplier h2{
     width: 110%;
@@ -179,4 +182,10 @@ div#map-canvas {
 }
 .addressSection {
     margin-top: 25px;
+}
+.editSupplier {
+    margin-top: 40px;
+}
+.deleteSupplier {
+    margin-top: 5px;
 }

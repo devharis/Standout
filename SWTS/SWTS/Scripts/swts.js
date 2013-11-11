@@ -9,7 +9,11 @@
                 var map = $(".map");
                 $("div.supplier").html(result);
                 $(".map").replaceWith(map);
-            }
+            },
+            complete: function () {
+                $("form").each(function() { $.data($(this)[0], 'validator', false); });
+                $.validator.unobtrusive.parse("form");
+            }            
         });
 
     });    

@@ -1,3 +1,7 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
+@if (TempData["UserMessage"] != null)
+{
+    <p>@TempData["UserMessage"]</p>
+}

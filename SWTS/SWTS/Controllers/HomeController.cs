@@ -35,24 +35,39 @@ namespace SWTS.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            // Query all suppliers
             return View("Index");
         }
 
         [HttpGet]
         public ActionResult LoadMenu()
         {
-            var model = this._service.GetAllSuppliers();
-            // Query all suppliers
-            return PartialView("_Menu", model);
+            try
+            {
+                var model = this._service.GetAllSuppliers();
+                return PartialView("_Menu", model);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(String.Empty, ex.Message);
+                TempData["UserMessage"] = "Error, all suppliers couldn't be retrived";
+                return View("Error");
+            }
         }
 
         [HttpGet]
         public ActionResult Supplier(int id)
         {
-            var model = this._service.GetSupplier(id);
-            // Query specific supplier table
-            return View("Supplier", model);
+            try
+            {
+                var model = this._service.GetSupplier(id);
+                return View("Supplier", model);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(String.Empty, ex.Message);
+                TempData["UserMessage"] = "Error, supplier couldn't be retrived";
+                return View("Error");   
+            }
         }
 
         [HttpGet]
@@ -71,11 +86,13 @@ namespace SWTS.Controllers
                 if (ModelState.IsValid)
                 {
                     supplier = this._service.AddSupplier(supplier);
+                    TempData["UserMessage"] = "Supplier added successfully";
                 }
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError(String.Empty, ex.Message);
+                TempData["UserMessage"] = "Error, couldn't add user";
                 return View("Error");
             }
             return RedirectToAction("Supplier", new { id = supplier.SupplierId});
@@ -87,11 +104,13 @@ namespace SWTS.Controllers
             try
             {
                 var model = this._service.GetSupplier(id);
+                TempData["UserMessage"] = "Supplier retrived successfully";
                 return PartialView("_EditSupplier", model);
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError(String.Empty, ex.Message);
+                TempData["UserMessage"] = "Error, supplier couldn't be retrived";
                 return View("Error");
             }
         }
@@ -105,15 +124,17 @@ namespace SWTS.Controllers
                 if (ModelState.IsValid)
                 {
                     this._service.Update(supplier);
-                    return RedirectToAction("Supplier", new { id = supplier.SupplierId });
+                    TempData["UserMessage"] = "Supplier updated successfully";
+                    
                 }
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError(String.Empty, ex.Message);
+                TempData["UserMessage"] = "Error, supplier couldn't be updated";
                 return View("Error");
             }
-            return View("Error");
+            return RedirectToAction("Supplier", new { id = supplier.SupplierId });
         }
 
         [HttpPost]
@@ -124,12 +145,14 @@ namespace SWTS.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    TempData["UserMessage"] = "Supplier deleted successfully";
                     this._service.DeleteSupplier(id);
                 }
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError(String.Empty, ex.Message);
+                TempData["UserMessage"] = "Error, supplier couldn't be deleted";
                 return View("Error");
             }
             return RedirectToAction("Index", "Home");
