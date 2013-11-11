@@ -8,6 +8,7 @@
     <div class="supplier col-xs-8">
         <h2>@Model.Name</h2>
         <div class="supplierInfo col-xs-7">
+            @Html.Hidden(Model.SupplierId.ToString(CultureInfo.InvariantCulture), null, new { @class = "supplierId"})
             @Html.Hidden(Model.Lat.ToString(CultureInfo.InvariantCulture), null, new { @class = "mapLat"})
             @Html.Hidden(Model.Lng.ToString(CultureInfo.InvariantCulture), null, new { @class = "mapLng"} )
     
@@ -19,10 +20,19 @@
             <p>@Model.Phone</p>
             <h4> <i class="glyphicon glyphicon-envelope"></i> Email</h4>
             <p>@Model.Email</p>
+            
+            <form method="POST" action="@Url.Action("DeleteSupplier", "Home", new { id = Model.SupplierId })">
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Delete supplier" class="deleteSupplier btn btn-sm btn-danger"  onclick="return confirm('Are you certain you want to delete this supplier?');" />
+            </form>
+            <input type="submit" value="Edit supplier" class="editSupplier btn btn-sm btn-warning" />
         </div>
         <div class="map col-xs-4">
             <h4><i class="glyphicon glyphicon-map-marker"></i> Map location</h4>
             <div id="map-canvas"></div>
         </div>
     </div>
+}
+@section Scripts {
+    <script type="text/javascript" src="~/Scripts/mapLoader.js"></script>
 }
