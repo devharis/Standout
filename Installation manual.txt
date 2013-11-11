@@ -1,0 +1,10 @@
+**** SWTS MANUAL ****
+
+Local: 
+Open up SWTS Project in Visual Studio 2012. Hit debug(F5) and you are set.
+Test database is already provided in the web.config file.
+
+Public:
+Visit - http://swts.devharis.com/
+
+- Cheers
