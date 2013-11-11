@@ -21,7 +21,9 @@
                         <img class="truck" alt="truck" src="@Url.Content("~/Content/images/tracking-icon.png")" />
                         <a class="navbar-brand" href="~/">Small Web based Suppliers Tracker</a>
                     </div>
-                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                    @if (User.Identity.IsAuthenticated)
+                    {    
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                         {
                             @Html.AntiForgeryToken()
                             <input type="submit" value="Logout" class="btn btn-sm btn-danger pull-right" />
@@ -29,6 +31,7 @@
                     }
                 </div>
             </div>
+
 
             @if (User.Identity.IsAuthenticated)
             {    

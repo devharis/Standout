@@ -152,6 +152,9 @@ div#map-canvas {
     margin-top: 60px;
   
 }
+.loginBox h4 {
+    font-family: �Courier New�, Courier, monospace;
+}
 .supplier h2{
     width: 110%;
     border-bottom: 1px solid #eeeeee;
