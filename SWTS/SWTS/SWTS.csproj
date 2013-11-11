@@ -285,6 +285,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\AddSupplier.cshtml" />
     <Content Include="Views\Home\_EditSupplier.cshtml" />
+    <Content Include="Views\Shared\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

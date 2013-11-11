@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using System.Web.Mvc;
 using SWTS.Filters;
 using SWTS.Models;
@@ -101,7 +102,7 @@ namespace SWTS.Controllers
             try
             {
                 var model = this._service.GetSupplier(id);
-                return View("Supplier", model);
+                return model == null ? View("NotFound") : View("Supplier", model);
             }
             catch (Exception ex)
             {
