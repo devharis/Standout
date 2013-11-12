@@ -24,4 +24,7 @@
     $('.ui-menu .accordion-heading').on("click", function (e) {
         $(this).find('i').toggleClass('glyphicon-minus-sign glyphicon-plus-sign', 200);
     });
+    
+    $("div.alert-success").fadeOut(4000, function () {
+    });
 });

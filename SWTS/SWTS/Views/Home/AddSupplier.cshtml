@@ -15,7 +15,7 @@
             
             <h4><i class="glyphicon glyphicon-briefcase"></i> Supplier</h4>
 
-            <i>Name @Html.ValidationMessageFor(model => model.Name, "- required", new { @class = "redclass" })</i>
+            <i>Name @Html.ValidationMessageFor(model => model.Name)</i>
             <div class="editor-field">
                 @Html.TextBoxFor(model => model.Name, null, new { @class = "form-control", @placeholder = "Name" })
                 
@@ -28,22 +28,22 @@
             
             <h4 class="addressSection"><i class="glyphicon glyphicon-home"></i> Address</h4>
             
-            <i>Address @Html.ValidationMessageFor(model => model.Address, "- required", new { @class = "redclass" })</i>
+            <i>Address @Html.ValidationMessageFor(model => model.Address)</i>
             <div class="editor-field">
                 @Html.TextBoxFor(model => model.Address, null, new { @class = "form-control geocodeAddress", @placeholder = "Address", required="required" })
             </div>
             
-            <i>Post code @Html.ValidationMessageFor(model => model.PostCode, "- required", new { @class = "redclass" })</i>
+            <i>Post code @Html.ValidationMessageFor(model => model.PostCode)</i>
             <div class="editor-field">
                 @Html.TextBoxFor(model => model.PostCode, null, new { @class = "form-control", @placeholder = "Post code" })
             </div>
 
-            <i>City @Html.ValidationMessageFor(model => model.City, "- required", new { @class = "redclass" })</i>
+            <i>City @Html.ValidationMessageFor(model => model.City)</i>
             <div class="editor-field">
                 @Html.TextBoxFor(model => model.City, null, new { @class = "form-control geocodeCity", @placeholder = "City" })
             </div>
 
-            <i>Country @Html.ValidationMessageFor(model => model.Country, "- required", new { @class = "redclass" })</i>
+            <i>Country @Html.ValidationMessageFor(model => model.Country)</i>
             <div class="editor-field">
                 @Html.TextBoxFor(model => model.Country, null, new { @class = "form-control geocodeCountry", @placeholder = "Country" })     
             </div>
@@ -55,12 +55,12 @@
         <div class="form-group col-xs-6">
             <h4><i class="glyphicon glyphicon-envelope"></i> Contact</h4>
 
-            <i>Email @Html.ValidationMessageFor(model => model.Email, "- required", new { @class = "redclass" })</i>
+            <i>Email @Html.ValidationMessageFor(model => model.Email)</i>
             <div class="editor-field">
                 @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email" })   
             </div>
 
-            <i>Phone @Html.ValidationMessageFor(model => model.Phone, "- required", new { @class = "redclass" })</i>
+            <i>Phone @Html.ValidationMessageFor(model => model.Phone)</i>
             <div class="editor-field">
                 @Html.TextBoxFor(model => model.Phone, null, new { @class = "form-control", @placeholder = "Phone" })     
             </div>

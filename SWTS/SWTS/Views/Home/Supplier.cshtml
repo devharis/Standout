@@ -3,14 +3,18 @@
 @{
     ViewBag.Title = "Supplier";
 }
+@if (TempData["UserMessage"] != null)
+{
+    <div class="alert-success">@TempData["UserMessage"]</div>
+}
 @if (Model != null)
 {
     <div class="supplier col-xs-8">
         <h2>@Model.Name</h2>
         <div class="supplierInfo col-xs-7">
-            @Html.Hidden(Model.SupplierId.ToString(CultureInfo.InvariantCulture), null, new { @class = "supplierId"})
-            @Html.Hidden(Model.Lat.ToString(CultureInfo.InvariantCulture), null, new { @class = "mapLat"})
-            @Html.Hidden(Model.Lng.ToString(CultureInfo.InvariantCulture), null, new { @class = "mapLng"} )
+            @Html.Hidden(Model.SupplierId.ToString(CultureInfo.InvariantCulture), null, new { @class = "supplierId" })
+            @Html.Hidden(Model.Lat.ToString(CultureInfo.InvariantCulture), null, new { @class = "mapLat" })
+            @Html.Hidden(Model.Lng.ToString(CultureInfo.InvariantCulture), null, new { @class = "mapLng" })
     
             <h4><i class="glyphicon glyphicon-home"></i> Address</h4>
             <p>@Model.Address</p>
