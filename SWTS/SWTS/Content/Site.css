@@ -113,6 +113,9 @@ textarea {
 #leftMenu .subMenu li a:hover{
     color: #505050; 
 }
+.supplier div.error {
+    margin-left: 32px;
+}
 
 .truck {
     width: 50px;
