@@ -9,6 +9,24 @@ namespace SWTS.Models
     /// </summary>
     public class Supplier
     {
+        // Empty constructor
+        public Supplier(){}
+
+        // Constructor with params, used for TDD's
+        public Supplier(string name, string address, int postCode, string city, string country, string email, string phone, Category category, double lat, double lng)
+        {
+            Name = name;
+            Address = address;
+            PostCode = postCode;
+            City = city;
+            Country = country;
+            Email = email;
+            Phone = phone;
+            Category = category.ToString();
+            Lat = lat;
+            Lng = lng;
+        }
+
         [Key]
         public int SupplierId { get; set; }
 

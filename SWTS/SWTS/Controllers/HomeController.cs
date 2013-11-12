@@ -21,7 +21,7 @@ namespace SWTS.Controllers
         public HomeController()
             : this(new SupplierService())
         {
-
+            // Empty
         }
 
         public HomeController(ISupplierService service)

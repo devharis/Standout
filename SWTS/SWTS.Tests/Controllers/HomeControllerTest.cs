@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SWTS;
 using SWTS.Controllers;
+using SWTS.Models;
 
 namespace SWTS.Tests.Controllers
 {
@@ -22,24 +18,11 @@ namespace SWTS.Tests.Controllers
             var result = controller.Index() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Modify this template to jump-start your ASP.NET MVC application.", result.ViewBag.Message);
-        }
-
-        [TestMethod]
-        public void About()
-        {
-            // Arrange
-            var controller = new HomeController();
-
-            // Act
-            var result = controller.Index() as ViewResult;
-
-            // Assert
             Assert.IsNotNull(result);
         }
 
         [TestMethod]
-        public void SelectSupplier()
+        public void Supplier()
         {
             const int id = 15;
             // Arrange
@@ -47,6 +30,35 @@ namespace SWTS.Tests.Controllers
 
             // Act
             var result = controller.Supplier(id) as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void AddSupplier()
+        {
+
+            // Arrange
+            var controller = new HomeController();
+            var model = new Supplier("Shell", "Daléngatan 7", 39238, "Kalmar", "Sweden", "info@shell.se", "0706380129", Category.Tobacco, 52.00, 24.00);
+
+            // Act
+            var result = controller.AddSupplier(model) as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void DeleteSupplier()
+        {
+            const int id = 15;
+            // Arrange
+            var controller = new HomeController();
+
+            // Act
+            var result = controller.DeleteSupplier(id) as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
