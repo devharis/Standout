@@ -168,14 +168,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Login\AccountModels.cs" />
+    <Compile Include="Models\Category\Category.cs" />
     <Compile Include="Models\Interface\ISupplierRepository.cs" />
     <Compile Include="Models\Interface\ISupplierService.cs" />
-    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\Supplier\Supplier.cs" />
     <Compile Include="Models\SwtsContext.cs" />
-    <Compile Include="Models\SupplierRepository.cs" />
-    <Compile Include="Models\SupplierService.cs" />
+    <Compile Include="Models\Supplier\SupplierRepository.cs" />
+    <Compile Include="Models\Supplier\SupplierService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
