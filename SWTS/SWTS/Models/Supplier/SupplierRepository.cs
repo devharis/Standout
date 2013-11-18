@@ -17,7 +17,7 @@ namespace SWTS.Models
 
         public SupplierRepository()
         {
-            this._context = new SupplierContext();
+            this._context = new SwtsContext();
             this._context.Configuration.LazyLoadingEnabled = true;
         }
 

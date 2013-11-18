@@ -8,9 +8,9 @@ namespace SWTS.Models
     ///  which tables to use in the database. 
     ///  It initalize the connection in a short sentence.
     /// </summary>
-    public class SupplierContext : DbContext
+    public class SwtsContext : DbContext
     {
-        public SupplierContext()
+        public SwtsContext()
             : base("name=DefaultConnection")
         {
             this.Configuration.ProxyCreationEnabled = false;
@@ -20,6 +20,7 @@ namespace SWTS.Models
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<Supplier>().ToTable("Supplier");
+            modelBuilder.Entity<UserProfile>().ToTable("UserProfile");
         }
     }
 }

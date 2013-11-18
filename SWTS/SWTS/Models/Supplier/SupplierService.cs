@@ -12,17 +12,6 @@ namespace SWTS.Models
     {
         private readonly ISupplierRepository _repository;
 
-        public SupplierService()
-            : this(new SupplierRepository())
-        {
-            // Empty!
-        }
-
-        public SupplierService(ISupplierRepository repository)
-        {
-            this._repository = repository;
-        }
-
         public List<Supplier> GetAllSuppliers()
         {
             return this._repository.Query<Supplier>().ToList();

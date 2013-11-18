@@ -165,7 +165,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,7 +173,7 @@
     <Compile Include="Models\Interface\ISupplierRepository.cs" />
     <Compile Include="Models\Interface\ISupplierService.cs" />
     <Compile Include="Models\Supplier.cs" />
-    <Compile Include="Models\SupplierContext.cs" />
+    <Compile Include="Models\SwtsContext.cs" />
     <Compile Include="Models\SupplierRepository.cs" />
     <Compile Include="Models\SupplierService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
